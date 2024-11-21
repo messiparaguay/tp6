@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Agregar Evento</title>
+</head>
+<body>
+  <h1>Agregar Evento para {{ contact.name }}</h1>
+  <form method="POST">
+    <label>Título del evento:</label>
+    <input type="text" name="event_title" required><br>
+    <label>Fecha del evento:</label>
+    <input type="date" name="event_date" required><br>
+    <label>Hora del evento:</label>
+    <input type="time" name="event_time" required><br>
+    <button type="submit">Guardar Evento</button>
+  </form>
+  <a href="{{ url_for('index') }}">Volver</a>
+</body>
+</html>

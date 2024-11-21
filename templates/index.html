@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Agenda Personal</title>
+</head>
+<body>
+  <h1>Agenda Personal</h1>
+  <a href="{{ url_for('add_contact') }}">Agregar Contacto</a>
+  <h2>Contactos</h2>
+  <ul>
+    {% for contact in contacts %}
+      <li>
+        {{ contact.name }} - {{ contact.phone }} - {{ contact.email }}
+        <a href="{{ url_for('edit_contact', id=contact.id) }}">Editar</a>
+        <a href="{{ url_for('delete_contact', id=contact.id) }}">Eliminar</a>
+        <a href="{{ url_for('view_events', contact_id=contact.id) }}">Ver Eventos</a>
+      </li>
+    {% endfor %}
+  </ul>
+</body>
+</html>
